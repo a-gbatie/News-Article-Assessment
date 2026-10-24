@@ -64,4 +64,11 @@ def calculate_average_word_length(text):
 # print(calculate_average_word_length(article))
 
 def count_paragraphs(text):
-  paragraphs = 
+  paragraphs = text.strip().split("\n\n")
+  return len(paragraphs)
+
+# print(count_paragraphs("First paragraph.\n\nSecond paragraph."))
+# print(count_paragraphs("Just one paragraph."))
+# print(count_paragraphs(""))
+# print(count_paragraphs("One.\n\nTwo.\n\nThree."))
+# print(count_paragraphs(article))
