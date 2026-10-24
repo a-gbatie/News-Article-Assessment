@@ -72,3 +72,21 @@ def count_paragraphs(text):
 # print(count_paragraphs(""))
 # print(count_paragraphs("One.\n\nTwo.\n\nThree."))
 # print(count_paragraphs(article))
+
+def count_sentences(text):
+  count = 0
+  idx = 0
+  
+  while idx < len(text): # While index is less than the number of characters in the text, keep looping
+    if text[idx] in ".!?": # Checks if current character us a period, question or exclamation mark
+      count += 1
+    
+    idx += 1
+
+  return count
+
+print(count_sentences("Hello world."))
+print(count_sentences("Hello! How are you? I'm fine."))
+print(count_sentences("This has no ending punctuation"))
+print(count_sentences(""))
+print(count_sentences(article))
