@@ -35,11 +35,33 @@ def most_common_word(text):
   return max(word_counter, key=word_counter.get) # Tells Python to compare counts associated with each word instead of comparing the words themselves. For example, "apple" appears 3x and "pie" appears 1x, Python returns "apple".
 
 
-print(most_common_word("Apple pie apple banana apple"))
-print(most_common_word("Python python PYTHON"))
-print(most_common_word(""))
-print(most_common_word(article))
+# print(most_common_word("Apple pie apple banana apple"))
+# print(most_common_word("Python python PYTHON"))
+# print(most_common_word(""))
+# print(most_common_word(article))
 
+def calculate_average_word_length(text):
+  words = text.split()
+  char = 0
+  count = 0
   
+  for word in words:
+    str = "".join(char for char in word if char.isalnum()) # Removes punctuation and special charcters, checks if character is letter or number, joins accepted characters into new string
+    
+    if str:
+      char += len(str)
+      count += 1
+  
+  if count == 0:
+    return 0.0
+  
+  return char / count
 
+# print(calculate_average_word_length("I love Python"))
+# print(calculate_average_word_length("Hi! Hello."))
+# print(calculate_average_word_length(""))
+# print(calculate_average_word_length("!!!"))
+# print(calculate_average_word_length(article))
 
+def count_paragraphs(text):
+  paragraphs = 
